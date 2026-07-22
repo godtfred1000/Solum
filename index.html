@@ -223,6 +223,45 @@
     .photo-band h2{font-size:clamp(2rem,4vw,3.3rem);max-width:650px;line-height:1.1;margin:0 0 14px}
     .photo-band p{font-size:1.06rem;max-width:600px;color:#e7f4f1}
 
+
+    .service-section{background:#fff}
+    .service-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:28px;align-items:start}
+    .service-intro{
+      position:sticky;top:105px;
+      background:linear-gradient(145deg,var(--green-dark),var(--green));
+      color:#fff;border-radius:22px;padding:30px;
+    }
+    .service-intro h2{font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.12;margin:8px 0 13px}
+    .service-intro p{color:#e2f2ef}
+    .service-intro .btn{margin-top:8px}
+    .accordion{display:grid;gap:12px}
+    details{
+      background:#fff;border:1px solid var(--line);border-radius:16px;
+      overflow:hidden;box-shadow:0 7px 24px rgba(14,62,56,.05);
+    }
+    details[open]{border-color:#a8cec7}
+    summary{
+      list-style:none;cursor:pointer;padding:20px 22px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      font-weight:850;font-size:1.04rem;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary:after{
+      content:"+";width:30px;height:30px;border-radius:50%;
+      background:var(--green-light);color:var(--green);
+      display:grid;place-items:center;font-size:1.35rem;font-weight:500;flex:0 0 auto;
+    }
+    details[open] summary:after{content:"−"}
+    .detail-content{padding:0 22px 22px;color:var(--muted)}
+    .detail-content p{margin:0 0 12px}
+    .detail-content p:last-child{margin-bottom:0}
+    .detail-content strong{color:var(--ink)}
+    .detail-content a{color:var(--green);font-weight:800}
+    .mini-note{
+      background:var(--green-light);border-radius:12px;padding:13px 15px;
+      color:var(--green-dark);margin-top:12px
+    }
+
     .app-section{
       background:linear-gradient(135deg,#e8f5f2,#f8fbfa);
     }
@@ -271,7 +310,8 @@
       nav ul{display:none;position:absolute;top:76px;left:18px;right:18px;background:#fff;padding:12px;box-shadow:var(--shadow);border:1px solid var(--line);border-radius:15px;flex-direction:column;align-items:stretch}
       nav ul.open{display:flex}
       .menu-btn{display:block}
-      .hero-inner,.special,.contact-wrap,.app-box{grid-template-columns:1fr}
+      .hero-inner,.special,.contact-wrap,.app-box,.service-layout{grid-template-columns:1fr}
+      .service-intro{position:static}
       .app-buttons{justify-content:flex-start}
       .hero-inner{padding-top:55px}
       .hero-card{max-width:600px}
@@ -311,6 +351,7 @@
     <nav aria-label="Hovedmeny">
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Meny</button>
       <ul id="menu">
+        <li><a href="#bestillinger">Time og resepter</a></li>
         <li><a href="#nyttige-lenker">Nyttige lenker</a></li>
         <li><a href="#helsenorge-app">Helsenorge-app</a></li>
         <li><a href="#praktisk">Praktisk info</a></li>
@@ -401,6 +442,76 @@
             <span><small>Last ned fra</small><strong>Google Play</strong></span>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section" id="bestillinger">
+    <div class="container service-layout">
+      <aside class="service-intro">
+        <span style="font-weight:850;text-transform:uppercase;letter-spacing:.1em;font-size:.76rem;color:#cce8e3">Time og henvendelser</span>
+        <h2>Bestillinger og praktisk informasjon</h2>
+        <p>Bestill og endre time, forny faste resepter eller kontakt legekontoret gjennom Helsenorge. Du kan også ringe oss.</p>
+        <a class="btn btn-primary" href="https://tjenester.helsenorge.no/" target="_blank" rel="noopener">Gå til Helsenorge</a>
+      </aside>
+
+      <div class="accordion">
+        <details open>
+          <summary>Bestille time</summary>
+          <div class="detail-content">
+            <p>Du kan bestille time gjennom <a href="https://tjenester.helsenorge.no/" target="_blank" rel="noopener">Helsenorge</a> eller ringe legesenteret på <a href="tel:+4735915580">35 91 55 80</a>.</p>
+            <p>Det er ofte størst telefonpågang kl. <strong>08:00–09:00</strong>, særlig mandag morgen. Henvendelser som ikke haster kan med fordel tas senere på dagen.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Endre eller avbestille time</summary>
+          <div class="detail-content">
+            <p>Du kan endre eller avbestille time på Helsenorge eller ved å ringe legekontoret.</p>
+            <p>Dette må gjøres senest <strong>24 timer før avtalt time</strong>. Ved for sen avbestilling eller uteblivelse kan timen bli belastet.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Fornye resept</summary>
+          <div class="detail-content">
+            <p>Fornyelse kan bestilles via Helsenorge eller telefon. Dette gjelder medisiner du har fått tidligere og bruker fast.</p>
+            <p><strong>Nye medisiner</strong> må normalt vurderes og avtales med lege i konsultasjon.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Sykmelding</summary>
+          <div class="detail-content">
+            <p>Sykmelding krever som hovedregel en medisinsk vurdering av legen. Bestill time så tidlig som mulig dersom du trenger vurdering av arbeidsuførhet.</p>
+            <p>Sykepenger forutsetter at arbeidsuførheten skyldes egen sykdom eller skade. Legen vurderer om vilkårene er oppfylt.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Hjemmebesøk</summary>
+          <div class="detail-content">
+            <p>Dersom du av helsemessige årsaker ikke er i stand til å komme til legekontoret, kan hjemmebesøk i enkelte tilfeller være aktuelt. Dette må avtales på telefon.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Pasientreiser, taxi og transport</summary>
+          <div class="detail-content">
+            <p>Kontakt Pasientreiser på <a href="tel:05515">05515</a> eller se <a href="https://www.pasientreiser.no/" target="_blank" rel="noopener">pasientreiser.no</a> for veiledning og eventuell bestilling.</p>
+            <p>Dersom du av medisinske grunner ikke kan bruke offentlig transport, kan lege vurdere behovet for rekvirert transport. Ta kontakt i god tid før timen.</p>
+            <p>En rekvirert reise må som hovedregel avklares <strong>før reisen gjennomføres</strong>. Opplys samtidig om behov for rullestol eller nødvendig ledsager.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Vaksinasjon</summary>
+          <div class="detail-content">
+            <p>Legesenteret kan sette enkelte vaksiner etter avtale. For reisevaksiner og mer omfattende vaksinasjonsprogram henvises det til kommunens vaksinasjonstilbud.</p>
+            <div class="mini-note">Anbefalinger, målgrupper og intervaller kan endres. Se oppdatert informasjon hos Helsenorge, FHI eller Skien kommune.</div>
+            <p style="margin-top:12px"><a href="https://www.skien.kommune.no/helse-og-mestring/vaksinasjon-og-smittevern/" target="_blank" rel="noopener">Vaksinasjon og smittevern i Skien kommune</a></p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -553,7 +664,7 @@
 <footer>
   <div class="footer-grid">
     <div><h3>Solum Legesenter</h3><p>Pelotongveien 2, 3734 Skien</p><p><a href="tel:+4735915580">35 91 55 80</a></p></div>
-    <div><h3>Hurtiglenker</h3><p><a href="https://tjenester.helsenorge.no/" target="_blank" rel="noopener">Helsenorge i nettleser</a></p><p><a href="#helsenorge-app">Helsenorge-appen</a></p><p><a href="#ansatte">Ansatte</a></p><p><a href="#priser">Priser</a></p><p><a href="https://www.pasientreiser.no/" target="_blank" rel="noopener">Pasientreiser</a></p><p><a href="https://www.nav.no/" target="_blank" rel="noopener">NAV</a></p></div>
+    <div><h3>Hurtiglenker</h3><p><a href="https://tjenester.helsenorge.no/" target="_blank" rel="noopener">Helsenorge i nettleser</a></p><p><a href="#helsenorge-app">Helsenorge-appen</a></p><p><a href="#bestillinger">Time og resepter</a></p><p><a href="#ansatte">Ansatte</a></p><p><a href="#priser">Priser</a></p><p><a href="https://www.pasientreiser.no/" target="_blank" rel="noopener">Pasientreiser</a></p><p><a href="https://www.nav.no/" target="_blank" rel="noopener">NAV</a></p></div>
     <div><h3>Akutt hjelp</h3><p>Livstruende: <a href="tel:113">113</a></p><p>Legevakt: <a href="tel:116117">116 117</a></p></div>
   </div>
   <div class="fine">Dette er en uoffisiell designskisse laget som forslag til en modernisert nettside. Informasjon må kvalitetssikres av Solum Legesenter før publisering.</div>
